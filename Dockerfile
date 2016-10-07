@@ -1,6 +1,6 @@
-FROM alpine:edge
+FROM microsoft/nanoserver
 MAINTAINER Tobias Gesellchen <tobias@gesellix.de> (@gesellix)
 
-RUN echo "The wind caught it." > /gattaca.txt
-CMD ["cat", "/gattaca.txt"]
+RUN powershell.exe Add-Content C:\gattaca.ps1 'Write-Host "The wind caught it."'
+CMD ["powershell", "/gattaca.ps1"]
 
